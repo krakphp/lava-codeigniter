@@ -1,0 +1,21 @@
+{
+    "name": "krak/lava-codeigniter",
+    "description": "Lava CodeIgniter Integration",
+    "type": "library",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "RJ Garcia",
+            "email": "rj@bighead.net"
+        }
+    ],
+    "require-dev": {
+        "krak/lava": "^0.3.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "Krak\\LavaCodeIgniter\\": "src"
+        },
+        "files": ["src/codeigniter.php"]
+    }
+}
