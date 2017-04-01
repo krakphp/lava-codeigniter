@@ -61,13 +61,13 @@ API
 
 These are all relative to the ``Krak\LavaCodeIgniter`` namespace.
 
-ciHtmlRenderError()
-~~~~~~~~~~~~~~~~~~~
+CIHtmlRenderError
+~~~~~~~~~~~~~~~~~~
 
 An exception handler that will use the CI ``Exceptions`` class to display the exception.
 
-ciViewMarshalResponse()
-~~~~~~~~~~~~~~~~~~~~~~~
+CIViewMarshalResponse
+~~~~~~~~~~~~~~~~~~~~~
 
 Allows actions to return two-tuples of ``[string, array]`` which represent the view path and the data to load into the view. This internally uses the ``$this->load->view`` method in the CI framework.
 
