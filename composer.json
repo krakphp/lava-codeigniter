@@ -10,12 +10,11 @@
         }
     ],
     "require-dev": {
-        "krak/lava": "^0.3.0"
+        "krak/lava": "^0.3.1"
     },
     "autoload": {
         "psr-4": {
             "Krak\\LavaCodeIgniter\\": "src"
-        },
-        "files": ["src/codeigniter.php"]
+        }
     }
 }

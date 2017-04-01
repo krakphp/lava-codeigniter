@@ -20,8 +20,8 @@ class CodeIgniterPackage implements Lava\Package
         $app->wrap(Diactoros\Response\EmitterInterface::class, function($emitter, $app) {
             return new CIEmitter($app['codeigniter']->output);
         });
-        $app->renderErrorStack()->push(ciHtmlRenderError(), 0, 'ciHtml');
-        $app->marshalResponseStack()->push(ciViewMarshalResponse(), 0, 'ciView');
+        $app->renderErrorStack()->push(new CIHtmlRenderError(), 0, 'ciHtml');
+        $app->marshalResponseStack()->push(new CIViewMarshalResponse(), 0, 'ciView');
         $app->httpStack()->push(injectRequestAttribute('ci', $this->ci));
     }
 }

@@ -2,10 +2,9 @@
 
 namespace Krak\LavaCodeIgniter;
 
-use Krak\Lava;
-
-function ciHtmlRenderError() {
-    return function($error, $req, $next) {
+class CIHtmlRenderError
+{
+    public function handle($error, $req, $next) {
         $_error = load_class('Exceptions', 'core');
 
         if ($error->status == 404) {
@@ -34,19 +33,5 @@ HTML;
             'An Error Was Encountered',
             $message
         ));
-    };
-}
-
-/** creates a view marshalResponse for the routing component marshal responses */
-function ciViewMarshalResponse() {
-    return function($res, $req, $next) {
-        if (!Lava\Util\isTuple($res, 'string', 'array')) {
-            return $next($res, $req);
-        }
-
-        $ci = $next['codeigniter'];
-
-        list($view_path, $view_data) = $res;
-        return $next->response()->html(200, [], $ci->load->view($view_path, $view_data, true));
-    };
+    }
 }
